@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Robux - Top Up Cepat & Murah</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid #334155;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #38bdf8;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #475569;
+            background-color: #0f172a;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #38bdf8;
+        }
+
+        .price-box {
+            background-color: #0f172a;
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 1px dashed #475569;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .price-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4ade80;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #22c55e;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-submit:hover {
+            background-color: #16a34a;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="title">⚡ ROBUX STORE</div>
+    <div class="subtitle">Beli Robux Murah & Proses Cepat via WA</div>
+
+    <form id="orderForm">
+        <div class="form-group">
+            <label for="username">Username Roblox</label>
+            <input type="text" id="username" placeholder="Masukkan username Roblox" required>
+        </div>
+
+        <div class="form-group">
+            <label for="robux">Jumlah Robux</label>
+            <input type="number" id="robux" placeholder="Contoh: 100" min="10" required>
+        </div>
+
+        <div class="price-box">
+            <span class="price-label">Total Harga:</span>
+            <span class="price-value" id="totalPrice">Rp 0</span>
+        </div>
+
+        <button type="submit" class="btn-submit">
+            Order via WhatsApp
+        </button>
+    </form>
+
+    <div class="note">*Harga: Rp 200 / 1 Robux</div>
+</div>
+
+<script>
+    // --- PENGATURAN ---
+    const ADMIN_WA = "6281215246830"; 
+    const HARGA_PER_ROBUX = 200;     
+
+    const robuxInput = document.getElementById('robux');
+    const totalPriceEl = document.getElementById('totalPrice');
+    const orderForm = document.getElementById('orderForm');
+
+    // Hitung total harga otomatis saat jumlah robux diketik
+    robuxInput.addEventListener('input', () => {
+        const amount = parseInt(robuxInput.value) || 0;
+        const total = amount * HARGA_PER_ROBUX;
+        totalPriceEl.textContent = 'Rp ' + total.toLocaleString('id-ID');
+    });
+
+    // Proses kirim ke WhatsApp saat form di-submit
+    orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value.trim();
+        const robux = document.getElementById('robux').value;
+        const total = (parseInt(robux) * HARGA_PER_ROBUX).toLocaleString('id-ID');
+
+        // Format pesan WhatsApp
+        const text = `Halo min, saya mau beli Robux!\n\n` +
+                     `• *Username Roblox:* ${username}\n` +
+                     `• *Jumlah Robux:* ${robux} RBX\n` +
+                     `• *Total Harga:* Rp ${total}\n\n` +
+                     `Mohon instruksi pembayarannya ya!`;
+
+        // Encode teks agar valid untuk URL
+        const encodedText = encodeURIComponent(text);
+        const waUrl = `https://wa.me/${ADMIN_WA}?text=${encodedText}`;
+
+        // Buka WhatsApp di tab baru
+        window.open(waUrl, '_blank');
+    });
+</script>
+
+</body>
+</html>
