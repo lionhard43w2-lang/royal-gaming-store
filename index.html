@@ -1,198 +1,477 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store Robux - Top Up Cepat & Murah</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Gaming Store</title>
 
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        .card {
-            background-color: #1e293b;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 420px;
-            border: 1px solid #334155;
-        }
+body {
+    background: #080808;
+    color: #fff;
+}
 
-        .title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #38bdf8;
-        }
+header {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292315;
+    background: #0b0b0b;
+}
 
-        .subtitle {
-            text-align: center;
-            font-size: 14px;
-            color: #94a3b8;
-            margin-bottom: 24px;
-        }
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
 
-        .form-group {
-            margin-bottom: 18px;
-        }
+.logo span {
+    color: white;
+}
 
-        label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 8px;
-            color: #cbd5e1;
-        }
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+}
 
-        input {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border: 1px solid #475569;
-            background-color: #0f172a;
-            color: #fff;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
+nav a:hover {
+    color: #d4af37;
+}
 
-        input:focus {
-            border-color: #38bdf8;
-        }
+.hero {
+    text-align: center;
+    padding: 65px 20px 40px;
+}
 
-        .price-box {
-            background-color: #0f172a;
-            padding: 14px 16px;
-            border-radius: 8px;
-            border: 1px dashed #475569;
-            margin-bottom: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.hero .tag {
+    color: #d4af37;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
 
-        .price-label {
-            font-size: 14px;
-            color: #94a3b8;
-        }
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
 
-        .price-value {
-            font-size: 18px;
-            font-weight: bold;
-            color: #4ade80;
-        }
+.hero h1 span {
+    color: #d4af37;
+}
 
-        .btn-submit {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background-color: #22c55e;
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
+.hero p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.8;
+}
 
-        .btn-submit:hover {
-            background-color: #16a34a;
-        }
+.container {
+    width: 90%;
+    max-width: 520px;
+    margin: 20px auto 60px;
+    padding: 28px;
+    background: #111;
+    border: 1px solid #3c321b;
+    border-radius: 14px;
+}
 
-        .note {
-            font-size: 12px;
-            color: #64748b;
-            text-align: center;
-            margin-top: 16px;
-        }
-    </style>
+.container h2 {
+    color: #d4af37;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 9px;
+    color: #ddd;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #080808;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #d4af37;
+}
+
+input::placeholder {
+    color: #555;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 22px;
+}
+
+.price-info strong {
+    color: #d4af37;
+}
+
+.summary {
+    background: #19160e;
+    border: 1px solid #493b1d;
+    border-radius: 9px;
+    padding: 18px;
+}
+
+.summary h3 {
+    color: #d4af37;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.summary-row strong {
+    color: white;
+}
+
+.total {
+    border-top: 1px solid #493b1d;
+    padding-top: 17px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.total span {
+    color: white;
+    font-weight: bold;
+}
+
+.total strong {
+    color: #d4af37;
+    font-size: 19px;
+}
+
+.payment {
+    margin-top: 22px;
+    background: #151515;
+    padding: 17px;
+    border-radius: 9px;
+    border: 1px solid #303030;
+}
+
+.payment h3 {
+    color: #d4af37;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.payment p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #999;
+}
+
+.payment strong {
+    color: white;
+}
+
+.payment-method {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 7px 11px;
+    background: #292211;
+    border: 1px solid #665021;
+    border-radius: 5px;
+    color: #e5c45f;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 17px;
+    margin-top: 23px;
+    background: linear-gradient(135deg, #f1d77b, #b58b27);
+    color: #090909;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    opacity: .85;
+    transform: translateY(-2px);
+}
+
+.note {
+    color: #666;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+footer {
+    padding: 25px 15px;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer span {
+    color: #d4af37;
+}
+
+@media(max-width:600px) {
+    header {
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .container {
+        padding: 22px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<div class="card">
-    <div class="title">⚡ ROBUX STORE</div>
-    <div class="subtitle">Beli Robux Murah & Proses Cepat via WA</div>
+<header>
+    <div class="logo">ROYAL <span>GAMING</span></div>
 
-    <form id="orderForm">
-        <div class="form-group">
-            <label for="username">Username Roblox</label>
-            <input type="text" id="username" placeholder="Masukkan username Roblox" required>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#order">Order Robux</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="tag">PREMIUM GAMING STORE</div>
+
+    <h1>ROYAL <span>GAMING</span> STORE</h1>
+
+    <p>
+        Your Trusted Roblox Top Up Store.<br>
+        Easy Order. Fast Response. Secure Payment.
+    </p>
+</section>
+
+<section class="container" id="order">
+
+    <h2>Order Robux</h2>
+    <p class="subtitle">
+        Isi detail pesanan lu untuk melanjutkan checkout.
+    </p>
+
+    <label>Username Roblox</label>
+    <input
+        type="text"
+        id="username"
+        placeholder="Masukkan username Roblox"
+        maxlength="20"
+        autocomplete="off"
+    >
+
+    <label>Jumlah Robux</label>
+    <input
+        type="number"
+        id="robux"
+        placeholder="Minimal 15 Robux"
+        min="15"
+        step="1"
+        oninput="calculate()"
+    >
+
+    <div class="price-info">
+        <span>Harga per Robux</span>
+        <strong>Rp222</strong>
+    </div>
+
+    <div class="summary">
+
+        <h3>Ringkasan Pesanan</h3>
+
+        <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="subtotal">Rp0</strong>
         </div>
 
-        <div class="form-group">
-            <label for="robux">Jumlah Robux</label>
-            <input type="number" id="robux" placeholder="Contoh: 100" min="10" required>
+        <div class="summary-row">
+            <span>PPN (11%)</span>
+            <strong id="tax">Rp0</strong>
         </div>
 
-        <div class="price-box">
-            <span class="price-label">Total Harga:</span>
-            <span class="price-value" id="totalPrice">Rp 0</span>
+        <div class="summary-row total">
+            <span>Total Pembayaran</span>
+            <strong id="total">Rp0</strong>
         </div>
 
-        <button type="submit" class="btn-submit">
-            Order via WhatsApp
-        </button>
-    </form>
+    </div>
 
-    <div class="note">*Harga: Rp 200 / 1 Robux</div>
-</div>
+    <div class="payment">
+        <h3>Metode Pembayaran</h3>
+
+        <p>
+            Pembayaran dilakukan melalui admin
+            setelah checkout WhatsApp.
+        </p>
+
+        <div class="payment-method">
+            QRIS & ALL PAYMENT
+        </div>
+    </div>
+
+    <button onclick="checkout()">
+        CHECKOUT VIA WHATSAPP
+    </button>
+
+    <p class="note">
+        Pastikan username dan jumlah Robux sudah benar.
+    </p>
+
+</section>
+
+<footer>
+    <span>ROYAL GAMING STORE</span><br>
+    Premium Roblox Top Up Store<br>
+    © 2026 Royal Gaming Store
+</footer>
 
 <script>
-    // --- PENGATURAN ---
-    const ADMIN_WA = "6281215246830"; 
-    const HARGA_PER_ROBUX = 200;     
 
-    const robuxInput = document.getElementById('robux');
-    const totalPriceEl = document.getElementById('totalPrice');
-    const orderForm = document.getElementById('orderForm');
+const PRICE = 222;
+const TAX_RATE = 0.11;
 
-    // Hitung total harga otomatis saat jumlah robux diketik
-    robuxInput.addEventListener('input', () => {
-        const amount = parseInt(robuxInput.value) || 0;
-        const total = amount * HARGA_PER_ROBUX;
-        totalPriceEl.textContent = 'Rp ' + total.toLocaleString('id-ID');
-    });
+// WHATSAPP ADMIN ROYAL GAMING STORE
+const WHATSAPP = "6281215246830";
 
-    // Proses kirim ke WhatsApp saat form di-submit
-    orderForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+function formatRupiah(number) {
+    return "Rp" + Math.round(number).toLocaleString("id-ID");
+}
 
-        const username = document.getElementById('username').value.trim();
-        const robux = document.getElementById('robux').value;
-        const total = (parseInt(robux) * HARGA_PER_ROBUX).toLocaleString('id-ID');
+function calculate() {
 
-        // Format pesan WhatsApp
-        const text = `Halo min, saya mau beli Robux!\n\n` +
-                     `• *Username Roblox:* ${username}\n` +
-                     `• *Jumlah Robux:* ${robux} RBX\n` +
-                     `• *Total Harga:* Rp ${total}\n\n` +
-                     `Mohon instruksi pembayarannya ya!`;
+    let amount = Number(
+        document.getElementById("robux").value
+    );
 
-        // Encode teks agar valid untuk URL
-        const encodedText = encodeURIComponent(text);
-        const waUrl = `https://wa.me/${ADMIN_WA}?text=${encodedText}`;
+    if (!Number.isSafeInteger(amount) || amount < 0) {
+        amount = 0;
+    }
 
-        // Buka WhatsApp di tab baru
-        window.open(waUrl, '_blank');
-    });
+    let subtotal = amount * PRICE;
+    let tax = subtotal * TAX_RATE;
+    let total = subtotal + tax;
+
+    document.getElementById("subtotal").innerText =
+        formatRupiah(subtotal);
+
+    document.getElementById("tax").innerText =
+        formatRupiah(tax);
+
+    document.getElementById("total").innerText =
+        formatRupiah(total);
+}
+
+function checkout() {
+
+    const username = document
+        .getElementById("username")
+        .value.trim();
+
+    const amount = Number(
+        document.getElementById("robux").value
+    );
+
+    if (!username) {
+        alert("Masukkan username Roblox terlebih dahulu!");
+        return;
+    }
+
+    if (!Number.isSafeInteger(amount) || amount < 15) {
+        alert("Minimal pembelian adalah 15 Robux!");
+        return;
+    }
+
+    const subtotal = amount * PRICE;
+    const tax = subtotal * TAX_RATE;
+    const total = subtotal + tax;
+
+    const message =
+`HALO ROYAL GAMING STORE!
+
+Saya ingin melakukan pemesanan Robux.
+
+DETAIL PESANAN
+Username Roblox: ${username}
+Jumlah Robux: ${amount} Robux
+
+RINCIAN PEMBAYARAN
+Harga Robux: ${formatRupiah(subtotal)}
+PPN 11%: ${formatRupiah(tax)}
+Total: ${formatRupiah(total)}
+
+METODE PEMBAYARAN
+QRIS / ALL PAYMENT
+
+Mohon konfirmasi pesanan dan berikan instruksi pembayaran.
+
+Terima kasih!`;
+
+    const url =
+        "https://wa.me/" + WHATSAPP +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+
 </script>
 
 </body>
